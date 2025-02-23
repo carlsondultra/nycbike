@@ -1,10 +1,11 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 interface Station {
   station_id: string;
   name: string;
+  capacity: number
   // Add other properties as needed
 }
 
@@ -16,7 +17,7 @@ const getApi = async (): Promise<Station[]> => {
   const response = await fetch(process.env.NEXT_PUBLIC_BIKE_API);
 
   if (!response.ok) {
-    throw new Error('Failed to fetch data');
+    throw new Error("Failed to fetch data");
   }
 
   const newData = await response.json();
@@ -31,7 +32,7 @@ export default function ClientComponent({ initialData }: ClientComponentProps) {
       const newData = await getApi();
       setData(newData);
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.error("Error fetching data:", error);
     }
   };
 
@@ -46,9 +47,10 @@ export default function ClientComponent({ initialData }: ClientComponentProps) {
   return (
     <div>
       <h1>Data from API</h1>
+      <p>station name - station capacity</p>
       <ul>
         {data.map((item) => (
-          <li key={item.station_id}>{item.name}</li>
+          <li key={item.station_id}>{item.name} - {item.capacity}</li>
         ))}
         {console.log(data[0].name)}
         {console.log(data[1].name)}
