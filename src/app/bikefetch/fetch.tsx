@@ -52,8 +52,6 @@ export default function ClientComponent({ initialData }: ClientComponentProps) {
         {data.map((item) => (
           <li key={item.station_id}>{item.name} - {item.capacity}</li>
         ))}
-        {console.log(data[0].name)}
-        {console.log(data[1].name)}
       </ul>
     </div>
   );
