@@ -2,20 +2,22 @@ playing with nyc bike station api
 
 ## Getting Started
 
-First, run the development server:
+to run codebase locally:
 
-```bash
+```
+git clone https://github.com/carlsondultra/nycbike.git
+cd nycbike
+npm install
+```
+
+Under the root directory, create a .env file, with the following inside of it:
+```
+NEXT_PUBLIC_BIKE_API=
+```
+
+Finally, to run the development server:
+```
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
