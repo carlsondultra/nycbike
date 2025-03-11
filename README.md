@@ -1,5 +1,7 @@
 playing with nyc bike station api
 
+go to /bikefetch route to see real-time changes
+
 ## Getting Started
 
 to run codebase locally:
